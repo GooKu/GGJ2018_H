@@ -10,6 +10,7 @@ public class Scene : MonoBehaviour
 		{
 			Debug.Log ("Stage Clear!");
 			collision.gameObject.GetComponent<LightMovement> ().direction = Vector2.zero;
+			collision.gameObject.GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Static;
 		}
 	}
 }
