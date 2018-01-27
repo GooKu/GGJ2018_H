@@ -43,6 +43,7 @@ public class LightMovement : MonoBehaviour {
     public void Stop()
     {
         direction = Vector2.zero;
+		StartCoroutine (checkDeath ());
     }
 
     private IEnumerator checkDeath()
