@@ -8,8 +8,7 @@ public class Scene : MonoBehaviour
 	{
 		if (collision.CompareTag ("Player"))
 		{
-			collision.gameObject.GetComponent<LightMovement> ().direction = Vector2.zero;
-			collision.gameObject.GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Static;
+			collision.gameObject.GetComponent<LightMovement> ().Stop();
 
 			if (gameObject.tag == "Sensor")
 			{
