@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4263063318732850}
   - component: {fileID: 114010271408507370}
   - component: {fileID: 50830015504262190}
-  - component: {fileID: 58565881070912894}
   - component: {fileID: 96399275613389612}
   - component: {fileID: 212211209522272462}
   - component: {fileID: 114533494373417346}
+  - component: {fileID: 61518084218453010}
   m_Layer: 0
   m_Name: Light
   m_TagString: Player
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58565881070912894
-CircleCollider2D:
+--- !u!61 &61518084218453010
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,9 +77,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!96 &96399275613389612
 TrailRenderer:
   serializedVersion: 2
