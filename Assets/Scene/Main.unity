@@ -187,12 +187,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 75716867}
---- !u!114 &243966570 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114993576355085442, guid: 4e54bf787e29fb341993486a1d86be7a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1525242760}
-  m_Script: {fileID: 11500000, guid: 5ed86634de6e2aa4087683beac99e56f, type: 3}
 --- !u!1 &275616494
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cee879bae7b6743a3e83c1b8e234d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemBarUI: {fileID: 243966570}
+  MainUI: {fileID: 1516594918}
 --- !u!1 &1206910272
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +744,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491938904}
+--- !u!114 &1516594918 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114898908388435940, guid: 4e54bf787e29fb341993486a1d86be7a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1525242760}
+  m_Script: {fileID: 11500000, guid: bc303d49bf954f7498e3f2cc13518e7a, type: 3}
 --- !u!1001 &1525242760
 Prefab:
   m_ObjectHideFlags: 0
@@ -850,21 +850,11 @@ Prefab:
     - target: {fileID: 224164466861745004, guid: 4e54bf787e29fb341993486a1d86be7a,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.18541096
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224164466861745004, guid: 4e54bf787e29fb341993486a1d86be7a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224037190603599388, guid: 4e54bf787e29fb341993486a1d86be7a,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114462371294469788, guid: 4e54bf787e29fb341993486a1d86be7a,
-        type: 2}
-      propertyPath: m_Size
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

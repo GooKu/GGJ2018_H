@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayManager : MonoBehaviour
 {
-    public ItemBarUI itemBarUI;
+    public MainUIManager MainUI;
 
     private StageConfig stageConfig;
 
@@ -30,9 +30,26 @@ public class GamePlayManager : MonoBehaviour
         }
     }
 
+    public void Init()
+    {
+        var stageConfigGameobject = GameObject.Find("StageConfig");
+
+        if (stageConfigGameobject == null) { return; }
+
+        stageConfig = stageConfigGameobject.GetComponent<StageConfig>();
+
+        if (stageConfig == null) { Debug.LogError("No Stage Config!!"); return; }
+
+        MainUI.ItemBarUI.itemInfo = stageConfig.itemInfo;
+        MainUI.ItemBarUI.AddItem();
+        MainUI.TimeCounter.TimeOut += StartGame;
+        MainUI.TimeCounter.SetTime(stageConfig.StartTime);
+    }
+
     public void StartGame()
     {
-        if(stageConfig == null) { Debug.LogError("No Stage Config!!"); }
+        MainUI.TimeCounter.TimeOut -= StartGame;
+        MainUI.GameStartModel();
 
         GameObject player = null;
         
@@ -57,19 +74,5 @@ public class GamePlayManager : MonoBehaviour
         var lightMovement = player.GetComponent<LightMovement>();
         lightMovement.UpdateSpeed(stageConfig.Speed);
         lightMovement.direction = stageConfig.StartPoint.right;
-    }
-
-    public void Init()
-    {
-        var stageConfigGameobject = GameObject.Find("StageConfig");
-
-        if (stageConfigGameobject == null) { return; }
-
-        stageConfig = stageConfigGameobject.GetComponent<StageConfig>();
-
-        if (stageConfig == null) { Debug.LogError("No Stage Config!!"); return; }
-
-        itemBarUI.itemInfo = stageConfig.itemInfo;
-        itemBarUI.AddItem();
     }
 }

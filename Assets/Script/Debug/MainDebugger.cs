@@ -12,7 +12,6 @@ public class MainDebugger : MonoBehaviour
 
     public void OnLoadLevelClick()
     {
-        Debug.Log(TestLevelInput.text);
         gM.LoadLevel(int.Parse(TestLevelInput.text));
     }
 

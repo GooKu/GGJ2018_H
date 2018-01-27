@@ -13,7 +13,7 @@ public class StageDebugger : MonoBehaviour
         var mainUI = Instantiate(MainUI);
 
         gm = GetComponent<GamePlayManager>();
-        gm.itemBarUI = mainUI.ItemBarUI;
+        gm.MainUI = mainUI;
         gm.Init();
     }
 
