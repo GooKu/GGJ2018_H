@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ItemInfo {
     [Tooltip("放上Item的UI")]
     public GameObject icon;
-    public int number;
+    public int number = 1;
 }
 
 //道具欄位的UI
