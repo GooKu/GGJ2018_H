@@ -45,6 +45,7 @@ public class LightMovement : MonoBehaviour
 	public void Stop ()
 	{
 		direction = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static ;
 		StartCoroutine (checkDeath ());
 	}
 

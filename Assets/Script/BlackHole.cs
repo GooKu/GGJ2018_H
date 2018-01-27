@@ -50,7 +50,7 @@ public class BlackHole : MonoBehaviour {
 
 				//計算黑洞引力
 				float f = Mathf.InverseLerp (effDis, 0, dis);
-				print (effDis + "  " + dis);
+//				print (effDis + "  " + dis);
 				f = Mathf.Lerp (0, force / 1000, f);
 
 				//影響物件
