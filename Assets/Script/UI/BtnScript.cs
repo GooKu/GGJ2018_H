@@ -13,6 +13,9 @@ public class BtnScript : MonoBehaviour {
     //有東西表示拖曳中
     private Transform dragItem = null;
 
+    //使用次數，歸零時銷毀
+    public int useTime = 0;
+
 
     // Use this for initialization
     void Start() {
@@ -21,6 +24,7 @@ public class BtnScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        //拖曳物件若有指定則滑鼠放開前都會跟著移動
         if(dragItem != null) {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pos.z = 0;
@@ -32,6 +36,8 @@ public class BtnScript : MonoBehaviour {
     public void OnStartDrag() {
         //複製物件
         dragItem = Instantiate(copyItem,Vector3.zero,Quaternion.identity).transform; 
+        //使用次數-1
+        
     }
 
     //放開時執行程式碼
