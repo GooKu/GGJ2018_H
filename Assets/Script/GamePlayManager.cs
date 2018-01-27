@@ -3,30 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayManager : MonoBehaviour
 {
-    [SerializeField]
-    private int currentLevel = 1;
-
     private StageConfig stageConfig;
-
-    private UnityEngine.SceneManagement.Scene currentScene;
 
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        DontDestroyOnLoad(this);
     }
 
     public void LoadLevel(int level)
     {
-        if(currentScene.IsValid())
-        {
-            SceneManager.UnloadSceneAsync(currentScene);
-        }
-        SceneManager.LoadScene("Level" + level, LoadSceneMode.Additive);
+        SceneManager.LoadScene("Level" + level, LoadSceneMode.Single);
     }
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode arg1)
     {
-        currentScene = scene;
          var stageConfigGameobject = GameObject.Find("StageConfig");
 
         if(stageConfigGameobject == null) { return; }
@@ -62,11 +53,11 @@ public class GamePlayManager : MonoBehaviour
         }
         else
         {
-            player = Instantiate(player, stageConfig.StartPoint.position, stageConfig.StartPoint.rotation);
+            player = Instantiate(player, stageConfig.StartPoint.position, new Quaternion());
         }
 
         var lightMovement = player.GetComponent<LightMovement>();
         lightMovement.UpdateSpeed(stageConfig.Speed);
-
+        lightMovement.direction = stageConfig.StartPoint.right;
     }
 }

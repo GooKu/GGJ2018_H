@@ -31,5 +31,6 @@ public class StageDebugger : MonoBehaviour
 
         var lightMovement = player.GetComponent<LightMovement>();
         lightMovement.UpdateSpeed(stageConfig.Speed);
+        lightMovement.direction = stageConfig.StartPoint.right;
     }
 }
