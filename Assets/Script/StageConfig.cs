@@ -7,4 +7,5 @@ public class StageConfig : MonoBehaviour
     public GameObject Light;
     public float Speed = .1f;
     public Transform StartPoint;
+    public ItemInfo[] itemInfo = new ItemInfo[0];
 }

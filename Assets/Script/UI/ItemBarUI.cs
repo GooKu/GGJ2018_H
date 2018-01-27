@@ -26,8 +26,6 @@ public class ItemBarUI : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        AddItem();
-
     }
 
     // Update is called once per frame
@@ -38,6 +36,7 @@ public class ItemBarUI : MonoBehaviour {
 
     //新增按鈕
     public void AddItem() {
+        Debug.Log(itemInfo.Length);
         //複製按鈕
         for(int i = 0; i < itemInfo.Length; i++) {
             GameObject item = Instantiate(itemInfo[i].icon,Vector3.zero,Quaternion.identity,itemRoot) as GameObject;

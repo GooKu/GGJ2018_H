@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayManager : MonoBehaviour
 {
+    public ItemBarUI itemBarUI;
+
     private StageConfig stageConfig;
 
     private void Start()
@@ -18,11 +20,7 @@ public class GamePlayManager : MonoBehaviour
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode arg1)
     {
-         var stageConfigGameobject = GameObject.Find("StageConfig");
-
-        if(stageConfigGameobject == null) { return; }
-
-        stageConfig = stageConfigGameobject.GetComponent<StageConfig>();
+        Init();
 
         var debugger = GameObject.Find("StageDebugCanvas");
 
@@ -59,5 +57,19 @@ public class GamePlayManager : MonoBehaviour
         var lightMovement = player.GetComponent<LightMovement>();
         lightMovement.UpdateSpeed(stageConfig.Speed);
         lightMovement.direction = stageConfig.StartPoint.right;
+    }
+
+    public void Init()
+    {
+        var stageConfigGameobject = GameObject.Find("StageConfig");
+
+        if (stageConfigGameobject == null) { return; }
+
+        stageConfig = stageConfigGameobject.GetComponent<StageConfig>();
+
+        if (stageConfig == null) { Debug.LogError("No Stage Config!!"); return; }
+
+        itemBarUI.itemInfo = stageConfig.itemInfo;
+        itemBarUI.AddItem();
     }
 }
