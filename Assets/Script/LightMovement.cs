@@ -74,9 +74,11 @@ public class LightMovement : MonoBehaviour {
 
     private IEnumerator checkDeath()
     {
+        float limitTime = 0;
         do {
             yield return null;
-        } while (trail.isVisible);
+            limitTime += Time.deltaTime;
+        } while (trail.isVisible && limitTime < 10);
         Destroy(gameObject);
     }
 
