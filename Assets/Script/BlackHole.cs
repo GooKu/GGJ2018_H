@@ -38,21 +38,25 @@ public class BlackHole : MonoBehaviour {
     IEnumerator BlackHoleWork(Transform target) {
         float dis = Vector2.Distance(transform.position, target.position);
         
-        while(flag) {   
+        while(flag) {
             //計算單位向量
-            Vector2 dir = transform.position - target.position;
-            dir = dir.normalized;
-                
-            //獲得物件與黑洞的距離
-            dis = Vector2.Distance(transform.position, target.position);
-                
-            //計算黑洞引力
-            float f = Mathf.InverseLerp(effDis, 0, dis);
-            print(effDis + "  " + dis);
-            f = Mathf.Lerp(0, force/1000, f);
+            if (target != null)
+            {
+                Vector2 dir = transform.position - target.position;
+                dir = dir.normalized;
 
-            //影響物件
-            target.GetComponent<Rigidbody2D>().AddForce(dir * f);
+                //獲得物件與黑洞的距離
+                dis = Vector2.Distance(transform.position, target.position);
+
+                //計算黑洞引力
+                float f = Mathf.InverseLerp(effDis, 0, dis);
+                print(effDis + "  " + dis);
+                f = Mathf.Lerp(0, force / 1000, f);
+
+                //影響物件
+                target.GetComponent<Rigidbody2D>().AddForce(dir * f);
+            }
+            
 
             //時間間隔
             yield return new WaitForSeconds(0.1f);
