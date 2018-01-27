@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cee879bae7b6743a3e83c1b8e234d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainUI: {fileID: 1516594918}
+  mainUI: {fileID: 1516594918}
 --- !u!1 &1206910272
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +622,28 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1223517632}
+--- !u!1 &1395207908 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1836093397016672, guid: 4e54bf787e29fb341993486a1d86be7a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1525242760}
+--- !u!95 &1395207909
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395207908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 728c58fc9fb764949a86d6994d912bdf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1491938904
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +878,16 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224370842200961840, guid: 4e54bf787e29fb341993486a1d86be7a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224370842200961840, guid: 4e54bf787e29fb341993486a1d86be7a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 384
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e54bf787e29fb341993486a1d86be7a, type: 2}

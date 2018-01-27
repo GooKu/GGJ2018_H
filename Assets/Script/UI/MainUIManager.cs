@@ -6,10 +6,18 @@ public class MainUIManager : MonoBehaviour
 {
     public ItemBarUI ItemBarUI;
     public TimeCounter TimeCounter;
-    public GameObject StartButton;
+    public StartBtn StartButton;
+
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void GameStartModel()
     {
-        StartButton.SetActive(false);
+        TimeCounter.StopAllCoroutines();
+        anim.Play("GameStart");
     }
 }

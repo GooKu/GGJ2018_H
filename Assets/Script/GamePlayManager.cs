@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GamePlayManager : MonoBehaviour
 {
-    public MainUIManager MainUI;
+    [SerializeField]
+    private MainUIManager mainUI;
 
     private StageConfig stageConfig;
 
     private void Start()
     {
+        if (mainUI != null)
+        {
+            SetMainUI(mainUI);
+        }
         SceneManager.sceneLoaded += OnSceneLoaded;
         DontDestroyOnLoad(this);
     }
@@ -30,6 +36,13 @@ public class GamePlayManager : MonoBehaviour
         }
     }
 
+    public void SetMainUI(MainUIManager mainUI)
+    {
+        this.mainUI = mainUI;
+        mainUI.TimeCounter.TimeOut += StartGame;
+        mainUI.StartButton.GetComponent<Button>().onClick.AddListener(StartGame);
+    }
+
     public void Init()
     {
         var stageConfigGameobject = GameObject.Find("StageConfig");
@@ -40,16 +53,15 @@ public class GamePlayManager : MonoBehaviour
 
         if (stageConfig == null) { Debug.LogError("No Stage Config!!"); return; }
 
-        MainUI.ItemBarUI.itemInfo = stageConfig.itemInfo;
-        MainUI.ItemBarUI.AddItem();
-        MainUI.TimeCounter.TimeOut += StartGame;
-        MainUI.TimeCounter.SetTime(stageConfig.StartTime);
+        mainUI.ItemBarUI.itemInfo = stageConfig.itemInfo;
+        mainUI.ItemBarUI.AddItem();
+        mainUI.TimeCounter.SetTime(stageConfig.StartTime);
     }
 
     public void StartGame()
     {
-        MainUI.TimeCounter.TimeOut -= StartGame;
-        MainUI.GameStartModel();
+        mainUI.TimeCounter.TimeOut -= StartGame;
+        mainUI.GameStartModel();
 
         GameObject player = null;
         

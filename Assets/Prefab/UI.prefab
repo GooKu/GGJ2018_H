@@ -913,7 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemBarUI: {fileID: 114993576355085442}
   TimeCounter: {fileID: 114353697725542938}
-  StartButton: {fileID: 1567002067277916}
+  StartButton: {fileID: 114062249138773182}
 --- !u!114 &114915867836016928
 MonoBehaviour:
   m_ObjectHideFlags: 1
