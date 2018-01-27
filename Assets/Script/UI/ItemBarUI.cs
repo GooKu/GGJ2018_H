@@ -28,8 +28,9 @@ public class ItemBarUI : MonoBehaviour {
     public Queue<GameObject> currentBtnList = new Queue<GameObject>();
 
     // Use this for initialization
+
     void Start() {       
-        AddItem();
+ 
         order = this;
     }
 

@@ -156,7 +156,6 @@ GameObject:
   - component: {fileID: 222409985746498534}
   - component: {fileID: 114748241444228608}
   - component: {fileID: 114081378163591006}
-  - component: {fileID: 50275603330881066}
   - component: {fileID: 61141993665258374}
   - component: {fileID: 114062249138773182}
   m_Layer: 5
@@ -249,6 +248,7 @@ GameObject:
   - component: {fileID: 223432812498013686}
   - component: {fileID: 114238380123057362}
   - component: {fileID: 114967824609672590}
+  - component: {fileID: 114898908388435940}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -357,26 +357,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!50 &50275603330881066
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1567002067277916}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &61014809718624044
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -507,7 +487,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 114748241444228608}
   m_OnClick:
     m_PersistentCalls:
@@ -731,7 +711,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224164466861745004}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -920,6 +900,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114898908388435940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836093397016672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc303d49bf954f7498e3f2cc13518e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemBarUI: {fileID: 114993576355085442}
 --- !u!114 &114915867836016928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1031,12 +1023,6 @@ MonoBehaviour:
   itemRoot: {fileID: 224037190603599388}
   itemInfo:
   - icon: {fileID: 1441664166105290, guid: 4f3f380eeb7d2cf41a1b789f43311f39, type: 2}
-    number: 2
-  - icon: {fileID: 1441664166105290, guid: d8951446163442247b28705350671034, type: 2}
-    number: 1
-  - icon: {fileID: 1441664166105290, guid: bfa598098b63e614a911b150db2db65f, type: 2}
-    number: 1
-  - icon: {fileID: 1441664166105290, guid: 8260ff84fbd77714a8cc82f54268e12d, type: 2}
     number: 2
 --- !u!124 &124048471014953144
 Behaviour:
@@ -1152,7 +1138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000015258796}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0.000015258796}
   m_SizeDelta: {x: 0, y: 106.7}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224115507895977540

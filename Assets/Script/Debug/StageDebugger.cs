@@ -2,35 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GamePlayManager))]
 public class StageDebugger : MonoBehaviour
 {
-	public void OnStargeGameClick()
+    private GamePlayManager gm;
+    public MainUIManager MainUI;
+
+    private void Start()
     {
-        StageConfig stageConfig = GameObject.Find("StageConfig").GetComponent<StageConfig>();
-        if (stageConfig == null) { Debug.LogError("No Stage Config!!"); }
+        var mainUI = Instantiate(MainUI);
 
-        GameObject player = null;
+        gm = GetComponent<GamePlayManager>();
+        gm.itemBarUI = mainUI.ItemBarUI;
+        gm.Init();
+    }
 
-        if (stageConfig.Light == null)
-        {
-            player = Resources.Load<GameObject>("Light");
-        }
-        else
-        {
-            player = stageConfig.Light;
-        }
-
-        if (stageConfig.StartPoint == null)
-        {
-            player = Instantiate(player);
-        }
-        else
-        {
-            player = Instantiate(player, stageConfig.StartPoint.position, stageConfig.StartPoint.rotation);
-        }
-
-        var lightMovement = player.GetComponent<LightMovement>();
-        lightMovement.UpdateSpeed(stageConfig.Speed);
-        lightMovement.direction = stageConfig.StartPoint.right;
+    public void OnStargeGameClick()
+    {
+        gm.StartGame();
     }
 }
