@@ -8,6 +8,7 @@ TagManager:
   - ColorChange
   - ColorBlock
   - Mirror
+  - Sensor
   layers:
   - Default
   - TransparentFX
