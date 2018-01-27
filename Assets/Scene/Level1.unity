@@ -77,18 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -110,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &90193865
 Prefab:
@@ -236,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336764095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.44, y: -0.21, z: 0}
+  m_LocalPosition: {x: -12.84, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -251,7 +246,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -267,7 +261,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -337,11 +330,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4866854251418836, guid: 2beb4b6ed67f2e142a7ba9095d0cd386, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.81
+      value: -6.59
       objectReference: {fileID: 0}
     - target: {fileID: 4866854251418836, guid: 2beb4b6ed67f2e142a7ba9095d0cd386, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.11
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 4866854251418836, guid: 2beb4b6ed67f2e142a7ba9095d0cd386, type: 2}
       propertyPath: m_LocalPosition.z
@@ -565,11 +558,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &1006083868
 Transform:
   m_ObjectHideFlags: 0
@@ -592,11 +585,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4876261716425666, guid: 009a7520b4194b848beac66cd5d55f79, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.86
+      value: -6.57
       objectReference: {fileID: 0}
     - target: {fileID: 4876261716425666, guid: 009a7520b4194b848beac66cd5d55f79, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 1.81
       objectReference: {fileID: 0}
     - target: {fileID: 4876261716425666, guid: 009a7520b4194b848beac66cd5d55f79, type: 2}
       propertyPath: m_LocalPosition.z
@@ -730,7 +723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4369557829892374, guid: a09a9f313348453439e415990cdfb530, type: 2}
       propertyPath: m_LocalScale.x
-      value: 4.770927
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 212665031220918938, guid: a09a9f313348453439e415990cdfb530,
         type: 2}
@@ -821,11 +814,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4824972145068830, guid: 479fb411bc529f04cae0bde1997f9b07, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.49
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 4824972145068830, guid: 479fb411bc529f04cae0bde1997f9b07, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.33
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: 4824972145068830, guid: 479fb411bc529f04cae0bde1997f9b07, type: 2}
       propertyPath: m_LocalPosition.z

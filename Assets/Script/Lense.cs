@@ -10,12 +10,12 @@ public class Lense : MonoBehaviour
 
 	private void OnTriggerExit2D (Collider2D collision)
 	{
-		if (isSplitting) return;
-		isSplitting = true;
-		float angle = 0f;
-		List<GameObject> newLights = new List<GameObject> ();
-		angle = 180 / (splitNumber + 1);
-		for (int i = 0; i < splitNumber; i++)
+        if (isSplitting) return;
+        isSplitting = true;
+        float angle = 0f;
+        List<GameObject> newLights = new List<GameObject> ();
+        angle = 180 / (splitNumber + 1);
+        for (int i = 0; i < splitNumber; i++)
 		{
 			newLights.Add (Instantiate (collision.gameObject));
 			float newAngle = angle * (i + 1);
@@ -46,11 +46,14 @@ public class Lense : MonoBehaviour
                         (new Vector2(Mathf.Cos(rad), -Mathf.Sin(rad))).normalized;
             }
 		}
-		Destroy (collision.gameObject);
-		StartCoroutine (ExecuteAfterTime (1));
-	}
+        collision.gameObject.GetComponent<LightMovement>().direction = new Vector2(0, 0);
+        collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        collision.gameObject.GetComponent<TrailRenderer>().enabled = false;
+        collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        StartCoroutine (ExecuteAfterTime (1));
+    }
 
-	IEnumerator ExecuteAfterTime (float time)
+    IEnumerator ExecuteAfterTime (float time)
 	{
 		yield return new WaitForSeconds (time);
 		isSplitting = false;
