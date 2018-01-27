@@ -12,8 +12,8 @@ public class LightParameter : MonoBehaviour
 			GameObject gb = Instantiate (gameObject);
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
 			TrailRenderer t = gb.GetComponent<TrailRenderer> ();
-			t.startColor = Color.red;
-			t.endColor = Color.red;
+			t.startColor = collision.GetComponent<SpriteRenderer> ().color;
+			t.endColor = collision.GetComponent<SpriteRenderer> ().color;
 			collision.enabled = false;
 			Debug.Log ("Color Changed");
 		}
