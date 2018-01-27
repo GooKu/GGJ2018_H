@@ -9,13 +9,21 @@ public class MainUIManager : MonoBehaviour
     public TimeCounter TimeCounter;
     public StartBtn StartButton;
     public Text CountDownText;
+    public ResultUI Result;
 
     private Animator anim;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+    }
+
+    public void GamePrepareMode()
+    {
         CountDownText.enabled = false;
+        Result.gameObject.SetActive(false);
+        StartButton.SetEnable(true);
+        anim.Play("GamePrepare");
     }
 
     public void GameStartModel()

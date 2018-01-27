@@ -33,4 +33,14 @@ public class MainDebugger : MonoBehaviour
     {
         gM.StartGame();
     }
+
+    public void OnGamePassClick()
+    {
+        gM.OnGamePass();
+    }
+
+    public void OnGameFailClick()
+    {
+        gM.OnGameFail();
+    }
 }

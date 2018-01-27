@@ -12,6 +12,8 @@ public class GamePlayManager : MonoBehaviour
 
     private float playTime = 0;
 
+    private int getPoint = 0;
+
     private void Start()
     {
         if (mainUI != null)
@@ -48,6 +50,8 @@ public class GamePlayManager : MonoBehaviour
         mainUI.transform.SetParent(this.transform);
         mainUI.TimeCounter.TimeOut += StartGame;
         mainUI.StartButton.GetComponent<Button>().onClick.AddListener(StartGame);
+        mainUI.Result.RestartButton.onClick.AddListener(onRestart);
+        mainUI.Result.ReturnButton.onClick.AddListener(OnReturnToMenu);
     }
 
     public void Init()
@@ -60,17 +64,22 @@ public class GamePlayManager : MonoBehaviour
 
         if (stageConfig == null) { Debug.LogError("No Stage Config!!"); return; }
 
+        if(mainUI == null) { Debug.LogError("No Main UI!!"); return; }
+
+        mainUI.GamePrepareMode();
+
         mainUI.ItemBarUI.itemInfo = stageConfig.itemInfo;
         mainUI.ItemBarUI.AddItem();
         mainUI.TimeCounter.SetTime(stageConfig.StartTime);
 
-        stageConfig.End.OnArrived += onGamePass;
+        stageConfig.End.OnArrived += OnGamePass;
     }
 
     public void StartGame()
     {
-        mainUI.TimeCounter.TimeOut -= StartGame;
         mainUI.GameStartModel();
+
+        getPoint = 0;
 
         GameObject player = null;
         
@@ -109,7 +118,7 @@ public class GamePlayManager : MonoBehaviour
             if(playTime <= 0)
             {
                 mainUI.CountDownText.text = "0";
-                onGameFail();
+                OnGameFail();
                 //TODO: end Game
                 yield break;
             }
@@ -119,14 +128,31 @@ public class GamePlayManager : MonoBehaviour
         } while (true);
     }
 
-    private void onGamePass()
+    public void OnGamePass()
     {
-        StopAllCoroutines();
+        gameEndHandle();
+        mainUI.Result.ShowPass(getPoint);
     }
 
-    private void onGameFail()
+    public void OnGameFail()
+    {
+        gameEndHandle();
+        mainUI.Result.ShowFail(getPoint);
+    }
+
+    private void gameEndHandle()
     {
         StopAllCoroutines();
+        stageConfig.End.OnArrived -= OnGamePass;
+    }
+
+    private void onRestart()
+    {
+
+    }
+
+    private void OnReturnToMenu()
+    {
 
     }
 }
