@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GamePlayManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GamePlayManager : MonoBehaviour
     private MainUIManager mainUI;
 
     private StageConfig stageConfig;
+
+    private float playTime = 0;
 
     private void Start()
     {
@@ -86,5 +89,26 @@ public class GamePlayManager : MonoBehaviour
         var lightMovement = player.GetComponent<LightMovement>();
         lightMovement.UpdateSpeed(stageConfig.Speed);
         lightMovement.direction = stageConfig.StartPoint.right;
+
+        playTime = stageConfig.GameTime;
+
+        StartCoroutine(onGameTick());
+    }
+
+    private IEnumerator onGameTick()
+    {
+        do
+        {
+            playTime -= Time.deltaTime;
+            if(playTime <= 0)
+            {
+                mainUI.CountDownText.text = "0";
+                //TODO: end Game
+                yield break;
+            }
+
+            mainUI.CountDownText.text = playTime.ToString("0");
+            yield return null;
+        } while (true);
     }
 }
