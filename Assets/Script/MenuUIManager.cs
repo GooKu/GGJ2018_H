@@ -20,6 +20,9 @@ public class MenuUIManager : MonoBehaviour
             btn.gameObject.SetActive(true);
             int level = i + 1;
             btn.onClick.AddListener(()=> { onSelectSceneClick(level); });
+
+            var starImg = btn.transform.Find("Star").GetComponent<Image>();
+            starImg.sprite = Resources.Load<Sprite>("Score_Star_"+PlayerInfo.GetPoint(level));
         }
         DontDestroyOnLoad(this);
     }

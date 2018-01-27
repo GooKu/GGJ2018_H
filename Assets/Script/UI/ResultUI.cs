@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ResultUI : MonoBehaviour
 {
     public Text ResultText;
+    public Image Star;
     public Button RestartButton;
     public Button ReturnButton;
 
@@ -23,7 +24,7 @@ public class ResultUI : MonoBehaviour
 
     private void show(int point)
     {
-        //TODO:show point
+        Star.sprite = Resources.Load<Sprite>("Score_Star_"+point);
         gameObject.SetActive(true);
     }
 

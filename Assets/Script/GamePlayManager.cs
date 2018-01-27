@@ -141,6 +141,11 @@ public class GamePlayManager : MonoBehaviour
     {
         gameEndHandle();
         mainUI.Result.ShowPass(getPoint);
+        int lastPoint = PlayerInfo.GetPoint(currentLevel);
+        if(lastPoint < getPoint)
+        {
+            PlayerInfo.SetPoint(currentLevel, getPoint);
+        }
     }
 
     public void OnGameFail()
