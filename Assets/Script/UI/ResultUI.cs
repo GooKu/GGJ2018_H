@@ -5,25 +5,28 @@ using UnityEngine.UI;
 
 public class ResultUI : MonoBehaviour
 {
-    public Text ResultText;
     public Image Star;
+    public Image ResultImage;
+    public Sprite PassSprite;
+    public Sprite FailSprite;
     public Button RestartButton;
     public Button ReturnButton;
 
 	public void ShowPass(int point)
     {
-        ResultText.text = "Complete";
+        ResultImage.sprite = PassSprite;
         show(point);
     }
 
     public void ShowFail(int point)
     {
-        ResultText.text = "Fail";
+        ResultImage.sprite = FailSprite;
         show(point);
     }
 
     private void show(int point)
     {
+        ResultImage.SetNativeSize();
         Star.sprite = Resources.Load<Sprite>("Score_Star_"+point);
         gameObject.SetActive(true);
     }
