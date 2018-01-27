@@ -25,8 +25,8 @@ public class LightParameter : MonoBehaviour
 				t.endColor = collision.GetComponent<SpriteRenderer> ().color;
 				collision.enabled = false;
 				Debug.Log ("Color Changed");
-				Destroy (this.gameObject);
-			}
+                GetComponent<LightMovement>().Stop();
+            }
 
 		}
 
@@ -35,8 +35,7 @@ public class LightParameter : MonoBehaviour
 			Debug.Log (collision.GetComponent<SpriteRenderer> ().color + ", " + GetComponent<TrailRenderer> ().startColor);
 			if (collision.GetComponent<SpriteRenderer> ().color != GetComponent<TrailRenderer> ().startColor)
 			{
-				GetComponent<LightMovement> ().direction = Vector2.zero;
-				GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Static;
+				GetComponent<LightMovement> ().Stop();
 			}
 		}
 	}
