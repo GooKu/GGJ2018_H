@@ -11,12 +11,7 @@ public class MainUIManager : MonoBehaviour
     public Text CountDownText;
     public ResultUI Result;
 
-    private Animator anim;
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+    private Animator anim { get { return GetComponent<Animator>(); } }
 
     public void GamePrepareMode()
     {

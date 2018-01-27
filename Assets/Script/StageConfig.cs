@@ -9,6 +9,7 @@ public class StageConfig : MonoBehaviour
     public Transform StartPoint;
     public ItemInfo[] itemInfo = new ItemInfo[0];
     public float StartTime = 60;
-    public float GameTime = 3;
+    public float GameTime = 10;
+    public Star[] Stars = new Star[0];
     public Scene End;
 }

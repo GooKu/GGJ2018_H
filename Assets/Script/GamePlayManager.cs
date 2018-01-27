@@ -80,6 +80,11 @@ public class GamePlayManager : MonoBehaviour
         mainUI.ItemBarUI.itemInfo = stageConfig.itemInfo;
         mainUI.ItemBarUI.AddItem();
         mainUI.TimeCounter.SetTime(stageConfig.StartTime);
+        
+        for(int i = 0; i < stageConfig.Stars.Length; i++)
+        {
+            stageConfig.Stars[i].OnGetStartEvent += OnGetPoint;
+        }
 
         stageConfig.End.OnArrived += OnGamePass;
     }
@@ -169,5 +174,10 @@ public class GamePlayManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
         Destroy(gameObject);
+    }
+
+    private void OnGetPoint()
+    {
+        getPoint++;
     }
 }

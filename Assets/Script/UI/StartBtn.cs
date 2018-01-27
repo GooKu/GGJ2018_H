@@ -14,13 +14,6 @@ public class StartBtn : MonoBehaviour {
     //True表示遊戲進行中
     public bool isPlaying = false;
 
-    private Button btn;
-
-    private void Start()
-    {
-        btn = GetComponent<Button>();
-    }
-
     //按下按鈕時發生
     public void OnBtnPress()
     {
@@ -37,6 +30,6 @@ public class StartBtn : MonoBehaviour {
         {
             GetComponent<Image>().sprite = startTex;
         }
-        btn.interactable = enable;
+        GetComponent<Button>().interactable = enable;
     }
 }
