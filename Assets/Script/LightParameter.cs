@@ -32,9 +32,11 @@ public class LightParameter : MonoBehaviour
 
 		else if (collision.CompareTag ("ColorBlock"))
 		{
+			Debug.Log (collision.GetComponent<SpriteRenderer> ().color + ", " + GetComponent<TrailRenderer> ().startColor);
 			if (collision.GetComponent<SpriteRenderer> ().color != GetComponent<TrailRenderer> ().startColor)
 			{
 				GetComponent<LightMovement> ().direction = Vector2.zero;
+				GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Static;
 			}
 		}
 	}
