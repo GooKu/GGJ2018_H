@@ -32,6 +32,13 @@ public class GamePlayManager : MonoBehaviour
         if(stageConfigGameobject == null) { return; }
 
         stageConfig = stageConfigGameobject.GetComponent<StageConfig>();
+
+        var debugger = GameObject.Find("StageDebugCanvas");
+
+        if (debugger != null)
+        {
+            debugger.SetActive(false);
+        }
     }
 
     public void StartGame()
@@ -60,5 +67,6 @@ public class GamePlayManager : MonoBehaviour
 
         var lightMovement = player.GetComponent<LightMovement>();
         lightMovement.UpdateSpeed(stageConfig.Speed);
+
     }
 }
