@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mirror
   - Color
+  - Lense
   layers:
   - Default
   - TransparentFX
