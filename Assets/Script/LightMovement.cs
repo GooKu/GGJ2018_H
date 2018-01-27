@@ -23,7 +23,7 @@ public class LightMovement : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		trail = GetComponent<TrailRenderer> ();
-	}
+    }
 
 	private void OnCollisionEnter2D (Collision2D collision)
 	{
@@ -56,6 +56,8 @@ public class LightMovement : MonoBehaviour
 			yield return null;
 			limitTime += Time.deltaTime;
 		} while (trail.isVisible && limitTime < 10);
+
+        if(gameObject == null) { yield break; }
 		Destroy (gameObject);
 	}
 
