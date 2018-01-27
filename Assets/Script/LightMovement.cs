@@ -80,6 +80,11 @@ public class LightMovement : MonoBehaviour {
         Destroy(gameObject);
     }
 
+    public void UpdateSpeed(float s)
+    {
+        speed = s;
+    }
+
     public void UpdateDirection(Vector2 direc)
     {
         direction = direc;

@@ -10,12 +10,13 @@ public class LightParameter : MonoBehaviour
 		if (collision.CompareTag ("ColorChange"))
 		{
 			GameObject gb = Instantiate (gameObject);
-			//GetComponent<LightMovement> ().direction = Vector2.zero;
+			GetComponent<LightMovement> ().direction = Vector2.zero;
 			TrailRenderer t = gb.GetComponent<TrailRenderer> ();
 			t.startColor = collision.GetComponent<SpriteRenderer> ().color;
 			t.endColor = collision.GetComponent<SpriteRenderer> ().color;
 			collision.enabled = false;
 			Debug.Log ("Color Changed");
+            Destroy(this.gameObject);
 		}
 
 		else if (collision.CompareTag ("ColorBlock"))
