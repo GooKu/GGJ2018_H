@@ -6,10 +6,13 @@ public class Source : MonoBehaviour
 {
     [SerializeField]
     private GameObject light;
-	void Start()
+    public void Start()
     {
-        light = Instantiate(light, transform.position, transform.rotation);
-        Debug.Log(transform.right);
-        light.GetComponent<LightMovement>().direction = transform.right.normalized;
+        var newLight = GameObject.Instantiate(light, transform.position, new Quaternion());
+
+        var movement = newLight.GetComponent<LightMovement>();
+        if (movement == null) { Debug.LogWarning("Player has no movement"); return; }
+
+        movement.UpdateDirection(transform.right);
     }
 }
