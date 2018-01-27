@@ -11,22 +11,35 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isTransmitting) { return; }
+
         if (!collision.gameObject.IsPlayer()) { return; }
 
-        var controller = collision.GetComponent<LightMovement>();
+        var movement = collision.GetComponent<LightMovement>();
 
-        if(controller == null) { Debug.LogWarning("Player"); return; }
+        if(movement == null) { Debug.LogWarning("Player has no movement"); return; }
 
-        //TODO
+        if (linkedPortal == null) { return; }
+
+        linkedPortal.Transmit(collision.gameObject);
+        movement.Stop();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.gameObject.IsPlayer()) { return; }
+        isTransmitting = false;
     }
 
-    public void Transmit()
+    public void Transmit(GameObject source)
     {
+        var newLight = GameObject.Instantiate(source, transform.position, new Quaternion());
 
+        isTransmitting = true;
+
+        var movement = newLight.GetComponent<LightMovement>();
+        if (movement == null) { Debug.LogWarning("Player has no movement"); return; }
+
+        movement.UpdateDirection(transform.right);
     }
 }

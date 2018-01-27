@@ -9,44 +9,44 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1691035916815060}
+  m_RootGameObject: {fileID: 1288861917233538}
   m_IsPrefabParent: 1
---- !u!1 &1691035916815060
+--- !u!1 &1288861917233538
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4866854251418836}
-  - component: {fileID: 61105047939706204}
-  - component: {fileID: 212268484500516476}
+  - component: {fileID: 4876261716425666}
+  - component: {fileID: 61264066430617360}
+  - component: {fileID: 212963433641563146}
   m_Layer: 0
-  m_Name: ColorChanger
-  m_TagString: Color
+  m_Name: ColorBlocker
+  m_TagString: ColorBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4866854251418836
+--- !u!4 &4876261716425666
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1691035916815060}
+  m_GameObject: {fileID: 1288861917233538}
   m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -6.23, y: 0.53, z: 0}
+  m_LocalPosition: {x: 8.09, y: 0.53, z: 0}
   m_LocalScale: {x: 8, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
---- !u!61 &61105047939706204
+--- !u!61 &61264066430617360
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1691035916815060}
+  m_GameObject: {fileID: 1288861917233538}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -66,12 +66,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!212 &212268484500516476
+--- !u!212 &212963433641563146
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1691035916815060}
+  m_GameObject: {fileID: 1288861917233538}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

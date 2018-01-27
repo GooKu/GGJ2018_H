@@ -21,7 +21,8 @@ public class LightMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-	}
+        trail = GetComponent<TrailRenderer>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -77,5 +78,20 @@ public class LightMovement : MonoBehaviour {
             yield return null;
         } while (trail.isVisible);
         Destroy(gameObject);
+    }
+
+    public void UpdateDirection(Vector2 direc)
+    {
+        direction = direc;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public Vector2 GetDirection()
+    {
+        return direction;
     }
 }
