@@ -20,12 +20,31 @@ public class Lense : MonoBehaviour
 			newLights.Add (Instantiate (collision.gameObject));
 			float newAngle = angle * (i + 1);
 			float rad = newAngle * Mathf.Deg2Rad;
-			if (collision.transform.rotation.z == 0 || collision.transform.rotation.z == 180)
-				newLights [i].GetComponent<LightMovement> ().direction =
-					(new Vector2 (Mathf.Sin (rad), Mathf.Cos (rad))).normalized;
-			else
-				newLights [i].GetComponent<LightMovement> ().direction =
-					(new Vector2 (Mathf.Cos (rad), Mathf.Sin (rad))).normalized;
+            if(collision.gameObject.GetComponent<LightMovement>().direction.x>0|| 
+                collision.gameObject.GetComponent<LightMovement>().direction.y > 0)
+            {
+                if (transform.rotation.z == 0 || transform.rotation.z == 180)
+                {
+                    newLights[i].GetComponent<LightMovement>().direction =
+                        (new Vector2(Mathf.Sin(rad), Mathf.Cos(rad))).normalized;
+                    Debug.Log("Horizontal "+collision.transform.rotation.z);
+                }
+                else
+                {
+                    newLights[i].GetComponent<LightMovement>().direction =
+                        (new Vector2(Mathf.Cos(rad), Mathf.Sin(rad))).normalized;
+                    Debug.Log("Vertical");
+                }
+            }
+            else
+            {
+                if (transform.rotation.z == 0 || transform.rotation.z == 180)
+                    newLights[i].GetComponent<LightMovement>().direction =
+                        (new Vector2(-Mathf.Sin(rad), Mathf.Cos(rad))).normalized;
+                else
+                    newLights[i].GetComponent<LightMovement>().direction =
+                        (new Vector2(Mathf.Cos(rad), -Mathf.Sin(rad))).normalized;
+            }
 		}
 		Destroy (collision.gameObject);
 		StartCoroutine (ExecuteAfterTime (1));
