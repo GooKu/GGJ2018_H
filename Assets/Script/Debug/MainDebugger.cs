@@ -10,6 +10,20 @@ public class MainDebugger : MonoBehaviour
     [SerializeField]
     private InputField TestLevelInput;
 
+    private void Start()
+    {
+        if(gM != null)
+        {
+            transform.SetParent(gM.transform);
+        }
+    }
+
+    public void SetGamePlayManager(GamePlayManager gM)
+    {
+        this.gM = gM;
+        transform.SetParent(gM.transform);
+    }
+
     public void OnLoadLevelClick()
     {
         gM.LoadLevel(int.Parse(TestLevelInput.text));

@@ -10,4 +10,5 @@ public class StageConfig : MonoBehaviour
     public ItemInfo[] itemInfo = new ItemInfo[0];
     public float StartTime = 60;
     public float GameTime = 3;
+    public Scene End;
 }

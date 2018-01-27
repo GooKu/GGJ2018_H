@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 114063542530017562}
   - component: {fileID: 114224844081300852}
   - component: {fileID: 114895145464898402}
-  - component: {fileID: 114180005355313686}
   m_Layer: 5
   m_Name: StageDebugCanvas
   m_TagString: Untagged
@@ -131,18 +130,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
---- !u!114 &114180005355313686
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1902597395112196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5cee879bae7b6743a3e83c1b8e234d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemBarUI: {fileID: 0}
 --- !u!114 &114224844081300852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainUI: {fileID: 114898908388435940, guid: 4e54bf787e29fb341993486a1d86be7a, type: 2}
+  MainDebugger: {fileID: 114133677960990076, guid: 29aa2289e52c61d4d93783dd09613835,
+    type: 2}
+  GM: {fileID: 114576553456812642, guid: 9e2ccb8025a946e478b0634551efac31, type: 2}
 --- !u!114 &114951186796171012
 MonoBehaviour:
   m_ObjectHideFlags: 1

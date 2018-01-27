@@ -30,7 +30,10 @@ public class GamePlayManager : MonoBehaviour
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode arg1)
     {
         Init();
+    }
 
+    public void HideDebugger()
+    {
         var debugger = GameObject.Find("StageDebugCanvas");
 
         if (debugger != null)
@@ -42,6 +45,7 @@ public class GamePlayManager : MonoBehaviour
     public void SetMainUI(MainUIManager mainUI)
     {
         this.mainUI = mainUI;
+        mainUI.transform.SetParent(this.transform);
         mainUI.TimeCounter.TimeOut += StartGame;
         mainUI.StartButton.GetComponent<Button>().onClick.AddListener(StartGame);
     }
@@ -59,6 +63,8 @@ public class GamePlayManager : MonoBehaviour
         mainUI.ItemBarUI.itemInfo = stageConfig.itemInfo;
         mainUI.ItemBarUI.AddItem();
         mainUI.TimeCounter.SetTime(stageConfig.StartTime);
+
+        stageConfig.End.OnArrived += onGamePass;
     }
 
     public void StartGame()
@@ -103,6 +109,7 @@ public class GamePlayManager : MonoBehaviour
             if(playTime <= 0)
             {
                 mainUI.CountDownText.text = "0";
+                onGameFail();
                 //TODO: end Game
                 yield break;
             }
@@ -110,5 +117,16 @@ public class GamePlayManager : MonoBehaviour
             mainUI.CountDownText.text = playTime.ToString("0");
             yield return null;
         } while (true);
+    }
+
+    private void onGamePass()
+    {
+        StopAllCoroutines();
+    }
+
+    private void onGameFail()
+    {
+        StopAllCoroutines();
+
     }
 }
