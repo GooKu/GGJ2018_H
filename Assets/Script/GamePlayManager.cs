@@ -14,6 +14,8 @@ public class GamePlayManager : MonoBehaviour
 
     private int getPoint = 0;
 
+    private int currentLevel = 0;
+
     private void Start()
     {
         if (mainUI != null)
@@ -26,7 +28,14 @@ public class GamePlayManager : MonoBehaviour
 
     public void LoadLevel(int level)
     {
+        StartCoroutine(loadLevel(level));
+    }
+
+    private IEnumerator loadLevel(int level)
+    {
+        yield return null;
         SceneManager.LoadScene("Level" + level, LoadSceneMode.Single);
+        currentLevel = level;
     }
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode arg1)
@@ -148,11 +157,12 @@ public class GamePlayManager : MonoBehaviour
 
     private void onRestart()
     {
-
+        LoadLevel(currentLevel);
     }
 
     private void OnReturnToMenu()
     {
-
+        SceneManager.LoadScene("Menu");
+        Destroy(gameObject);
     }
 }
