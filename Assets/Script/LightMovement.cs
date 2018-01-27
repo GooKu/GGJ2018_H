@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TrailRenderer))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class LightMovement : MonoBehaviour {
 
     public Rigidbody2D rb;
@@ -11,6 +12,7 @@ public class LightMovement : MonoBehaviour {
     private float IncidenceAngle;
     private float NormalAngle;
     private float angle;
+    private TrailRenderer trail;
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -36,4 +38,17 @@ public class LightMovement : MonoBehaviour {
     void FixedUpdate () {
         transform.Translate(direction * speed);
 	}
+
+    public void Stop()
+    {
+        direction = Vector2.zero;
+    }
+
+    private IEnumerator checkDeath()
+    {
+        do {
+            yield return null;
+        } while (trail.isVisible);
+        Destroy(gameObject);
+    }
 }
