@@ -23,6 +23,7 @@ public class LightMovement : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		trail = GetComponent<TrailRenderer> ();
+        CameraController.Instance.AddLight(transform);
     }
 
 	private void OnCollisionEnter2D (Collision2D collision)
@@ -46,7 +47,8 @@ public class LightMovement : MonoBehaviour
 	{
 		direction = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static ;
-		StartCoroutine (checkDeath ());
+        CameraController.Instance.RemoveLight(transform);
+        StartCoroutine(checkDeath ());
 	}
 
 	private IEnumerator checkDeath ()
