@@ -87,10 +87,13 @@ public class GamePlayManager : MonoBehaviour
         }
 
         stageConfig.End.OnArrived += OnGamePass;
+        CameraController.Instance.ChangeType(CameraController.CameraType.BarValue);
     }
 
     public void StartGame()
     {
+        CameraController.Instance.ChangeType(CameraController.CameraType.FollowTarget);
+
         mainUI.GameStartModel();
 
         getPoint = 0;
@@ -163,6 +166,7 @@ public class GamePlayManager : MonoBehaviour
     {
         StopAllCoroutines();
         stageConfig.End.OnArrived -= OnGamePass;
+        CameraController.Instance.ChangeType(CameraController.CameraType.Stop);
     }
 
     private void onRestart()
