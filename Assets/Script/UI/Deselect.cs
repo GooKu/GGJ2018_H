@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Deselect : MonoBehaviour
 {
-	public bool canActivate = false;
+	public GameObject gb;
 
 	public void Delete ()
 	{
-		canActivate = true;
+		//gameObject.transform.parent.gameObject.SetActive (false);
 		Destroy (gameObject.transform.parent.gameObject);
 	}
 }

@@ -185,17 +185,6 @@ Prefab:
       objectReference: {fileID: 1112176221}
     - target: {fileID: 114463026175567816, guid: b57c4d8e8a1f9a842908c979f1376bf3,
         type: 2}
-      propertyPath: itemInfo.Array.data[0].icon
-      value: 
-      objectReference: {fileID: 1441664166105290, guid: 4f3f380eeb7d2cf41a1b789f43311f39,
-        type: 2}
-    - target: {fileID: 114463026175567816, guid: b57c4d8e8a1f9a842908c979f1376bf3,
-        type: 2}
-      propertyPath: itemInfo.Array.data[0].number
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114463026175567816, guid: b57c4d8e8a1f9a842908c979f1376bf3,
-        type: 2}
       propertyPath: Stars.Array.data[0]
       value: 
       objectReference: {fileID: 1444299632}
@@ -297,7 +286,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138618263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.17, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
