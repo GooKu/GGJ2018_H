@@ -33,6 +33,7 @@ public class LightMovement : MonoBehaviour
 		{
 			normal = collision.contacts [0].normal;
 			direction = Vector2.Reflect (direction, normal);
+			transform.Find ("Child").transform.Rotate (new Vector3 (0, 0, 90 - Vector2.Angle (direction, normal)));
 		}
 	}
 
