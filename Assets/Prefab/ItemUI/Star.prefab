@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114665729771414750}
   - component: {fileID: 114967679156902282}
   m_Layer: 5
-  m_Name: Wall
+  m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   copyItem: {fileID: 1360990280119422, guid: a09a9f313348453439e415990cdfb530, type: 2}
+  useTime: 0
 --- !u!114 &114983577501125942
 MonoBehaviour:
   m_ObjectHideFlags: 1
