@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //開始用按鈕
 
@@ -20,12 +21,15 @@ public class StartBtn : MonoBehaviour {
     public void OnBtnPress()
     {
         SetEnable(false);
-		gb = GameObject.FindGameObjectsWithTag ("Black Hole");
-		foreach (GameObject g in gb)
+		if (SceneManager.GetActiveScene ().name == "Level2")
 		{
-			g.GetComponent<CircleCollider2D> ().radius = 3.5f;
+			gb = GameObject.FindGameObjectsWithTag ("Black Hole");
+			foreach (GameObject g in gb)
+			{
+				Debug.Log (g.name);
+				g.GetComponent<CircleCollider2D> ().radius = 3.5f;
+			}
 		}
-		Debug.Log ("HEY");
     }
 
     public void SetEnable(bool enable)
