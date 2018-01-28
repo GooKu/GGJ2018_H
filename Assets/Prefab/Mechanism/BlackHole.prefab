@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212903869420893588}
   - component: {fileID: 58260873663482394}
   - component: {fileID: 114092652863807192}
+  - component: {fileID: 114031947962946494}
   m_Layer: 0
   m_Name: BlackHole_Particle (2)
   m_TagString: Untagged
@@ -79,7 +80,7 @@ GameObject:
   - component: {fileID: 95281776377458214}
   m_Layer: 0
   m_Name: BlackHole
-  m_TagString: Untagged
+  m_TagString: Black Hole
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
