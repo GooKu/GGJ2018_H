@@ -36,7 +36,7 @@ public class BtnScript : MonoBehaviour {
     public void OnStartDrag() {
         //複製物件
         dragItem = Instantiate(copyItem,Vector3.zero,Quaternion.identity).transform;
-		dragItem.gameObject.AddComponent<Drag> ();
+		//dragItem.gameObject.AddComponent<Drag> ();
 		//使用次數-1
         
     }
