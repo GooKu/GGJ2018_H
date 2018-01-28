@@ -30,7 +30,6 @@ public class Modify : MonoBehaviour
 	{
 		float change = slider.value;
 		gb.transform.eulerAngles = new Vector3 (0, 0, change);
-		Debug.Log (change);
 	}
 
 	public void Force ()
