@@ -14,10 +14,18 @@ public class StartBtn : MonoBehaviour {
     //True表示遊戲進行中
     public bool isPlaying = false;
 
+	public GameObject [] gb;
+
     //按下按鈕時發生
     public void OnBtnPress()
     {
         SetEnable(false);
+		gb = GameObject.FindGameObjectsWithTag ("Black Hole");
+		foreach (GameObject g in gb)
+		{
+			g.GetComponent<CircleCollider2D> ().radius = 3.5f;
+		}
+		Debug.Log ("HEY");
     }
 
     public void SetEnable(bool enable)
