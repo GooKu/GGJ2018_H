@@ -35,7 +35,11 @@ public class Drag : MonoBehaviour
 
 	private void OnMouseDown ()
 	{
-			
+
+        if (GameObject.Find("Modifier"))
+        {
+            return;
+        }
 
 		if (gameObject.tag == "Mirror")
 		{
