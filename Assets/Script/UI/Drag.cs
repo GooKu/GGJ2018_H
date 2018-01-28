@@ -11,7 +11,6 @@ public class Drag : MonoBehaviour
 	public Button deselect;
 	public GameObject modifier;
 
-	[SerializeField]
 	private GameObject scrollView, nextItem, preItem;
 	private GameObject gb;
 	private Slider f;
@@ -28,6 +27,7 @@ public class Drag : MonoBehaviour
 
 	private void OnMouseDrag ()
 	{
+		Debug.Log ("Drag");
 		Vector3 pos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 10);
 		Vector3 objpos = Camera.main.ScreenToWorldPoint (pos);
 		transform.position = objpos;
@@ -35,7 +35,7 @@ public class Drag : MonoBehaviour
 
 	private void OnMouseDown ()
 	{
-			
+		Debug.Log ("HI");
 
 		if (gameObject.tag == "Mirror")
 		{
@@ -64,9 +64,11 @@ public class Drag : MonoBehaviour
 
 			f = Instantiate (force, GameObject.Find ("Modifier").transform);
 			f.GetComponent<Modify> ().gb = gameObject;
+			f.transform.localPosition = new Vector3 (-190, 15, 0);
 			f.name = "Force";
 
 			d = Instantiate (deselect, GameObject.Find ("Modifier").transform);
+			d.transform.localPosition = new Vector3 (0, 50, 0);
 			d.name = "Deselect";
 		}
 
@@ -80,11 +82,6 @@ public class Drag : MonoBehaviour
 
 	public void Update ()
 	{
-		if (gameObject.tag == "Black Hole" && GameObject.Find ("Modifier"))
-		{
-			gameObject.GetComponent<CircleCollider2D> ().enabled = false;
-		}
-
 		if (GameObject.Find ("Deselect") && GameObject.Find ("Deselect").GetComponent<Deselect> ().canActivate)
 			activate (true);
 	}
