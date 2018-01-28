@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 212903869420893588}
   - component: {fileID: 58260873663482394}
   - component: {fileID: 114092652863807192}
+  - component: {fileID: 114031947962946494}
   m_Layer: 0
   m_Name: BlackHole
-  m_TagString: Untagged
+  m_TagString: Black Hole
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,6 +58,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3.5
+--- !u!114 &114031947962946494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014481303666916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da447b635b62b0246a2a63e63ed164f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: {fileID: 0}
+  rotate: {fileID: 0}
+  force: {fileID: 114820546443258388, guid: b27d3a5ae99fa5a4b8a482ec1605aea6, type: 2}
+  deselect: {fileID: 114180212307818216, guid: 0468b2177309d0a4b979d5c9e8622e72, type: 2}
+  modifier: {fileID: 1617382865467054, guid: 3cec6e6a061abf34fbefe8153d803618, type: 2}
 --- !u!114 &114092652863807192
 MonoBehaviour:
   m_ObjectHideFlags: 1

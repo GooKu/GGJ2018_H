@@ -9,6 +9,7 @@ TagManager:
   - ColorBlock
   - Mirror
   - Sensor
+  - Black Hole
   layers:
   - Default
   - TransparentFX
