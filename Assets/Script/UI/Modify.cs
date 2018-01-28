@@ -23,7 +23,7 @@ public class Modify : MonoBehaviour
 	public void Scale ()
 	{
 		float change = slider.value;
-		gb.transform.localScale = new Vector3 (change, gb.transform.localScale.y, gb.transform.localScale.z);
+		gb.transform.localScale = new Vector3 (gb.transform.localScale.x, change, gb.transform.localScale.z);
 	}
 
 	public void Rotate ()
