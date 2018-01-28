@@ -25,6 +25,7 @@ public class StartBtn : MonoBehaviour {
 		{
 			g.GetComponent<CircleCollider2D> ().radius = 3.5f;
 		}
+		Debug.Log ("HEY");
     }
 
     public void SetEnable(bool enable)
