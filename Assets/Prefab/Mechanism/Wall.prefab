@@ -65,7 +65,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &114864875311366994
 MonoBehaviour:
@@ -83,6 +83,9 @@ MonoBehaviour:
   force: {fileID: 0}
   deselect: {fileID: 114180212307818216, guid: 0468b2177309d0a4b979d5c9e8622e72, type: 2}
   modifier: {fileID: 1617382865467054, guid: 3cec6e6a061abf34fbefe8153d803618, type: 2}
+  scrollView: {fileID: 0}
+  nextItem: {fileID: 0}
+  preItem: {fileID: 0}
 --- !u!212 &212665031220918938
 SpriteRenderer:
   m_ObjectHideFlags: 1
