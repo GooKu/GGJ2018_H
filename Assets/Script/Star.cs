@@ -7,6 +7,8 @@ public class Star : MonoBehaviour
 {
     public Action OnGetStartEvent = delegate () { };
 
+    public GameObject Effect;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.IsPlayer()) { return; }
@@ -15,7 +17,15 @@ public class Star : MonoBehaviour
 
         GetComponent<Renderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
-        //TODO:play partical
+
+        Effect.SetActive(true);
+        StartCoroutine(death());
+    }
+
+    private IEnumerator death()
+    {
+        yield return new WaitForSeconds(.5f);
+        Destroy(gameObject);
     }
 
 }
