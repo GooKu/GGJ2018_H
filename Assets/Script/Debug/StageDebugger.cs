@@ -1,24 +1,28 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(GamePlayManager))]
 public class StageDebugger : MonoBehaviour
 {
-    private GamePlayManager gm;
     public MainUIManager MainUI;
+    public MainDebugger MainDebugger;
+    public GamePlayManager GM;
 
     private void Start()
     {
-        var mainUI = Instantiate(MainUI);
-
-        gm = GetComponent<GamePlayManager>();
-        gm.MainUI = mainUI;
-        gm.Init();
+        if (GameObject.FindObjectOfType(typeof(GamePlayManager)))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void OnStargeGameClick()
     {
-        gm.StartGame();
+        var mainUI = Instantiate(MainUI);
+        var mainDebugger = Instantiate(MainDebugger);
+        GM = Instantiate(GM);
+        GM.SetMainUI(mainUI);
+        GM.Init();
+        mainDebugger.SetGamePlayManager(GM);
+        gameObject.SetActive(false);
     }
 }

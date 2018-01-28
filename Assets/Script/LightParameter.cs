@@ -24,7 +24,7 @@ public class LightParameter : MonoBehaviour
 				t.startColor = collision.GetComponent<SpriteRenderer> ().color;
 				t.endColor = collision.GetComponent<SpriteRenderer> ().color;
 				collision.enabled = false;
-				Debug.Log ("Color Changed");
+//				Debug.Log ("Color Changed");
                 GetComponent<LightMovement>().Stop();
             }
 
@@ -32,7 +32,7 @@ public class LightParameter : MonoBehaviour
 
 		else if (collision.CompareTag ("ColorBlock"))
 		{
-			Debug.Log (collision.GetComponent<SpriteRenderer> ().color + ", " + GetComponent<TrailRenderer> ().startColor);
+//			Debug.Log (collision.GetComponent<SpriteRenderer> ().color + ", " + GetComponent<TrailRenderer> ().startColor);
 			if (collision.GetComponent<SpriteRenderer> ().color != GetComponent<TrailRenderer> ().startColor)
 			{
 				GetComponent<LightMovement> ().Stop();
