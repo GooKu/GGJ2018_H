@@ -23,6 +23,8 @@ public class MenuUIManager : MonoBehaviour
 
             var starImg = btn.transform.Find("Star").GetComponent<Image>();
             starImg.sprite = Resources.Load<Sprite>("Score_Star_"+PlayerInfo.GetPoint(level));
+
+            btn.transform.GetComponentInChildren<Text>().text = "Level\n" + level;
         }
         DontDestroyOnLoad(this);
     }
