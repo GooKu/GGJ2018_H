@@ -15,18 +15,21 @@ public class StartBtn : MonoBehaviour {
     public bool isPlaying = false;
 
     //按下按鈕時發生
-    public void OnBtnPress() {
-        //切換按鈕狀態
-        if(isPlaying) {
-            GetComponent<Image>().sprite = waitTex;
-            isPlaying = !isPlaying;
-
-
-        } else {
-            GetComponent<Image>().sprite = startTex;
-            isPlaying = !isPlaying;
-        }
+    public void OnBtnPress()
+    {
+        SetEnable(false);
     }
 
-
+    public void SetEnable(bool enable)
+    {
+        if (enable)
+        {
+            GetComponent<Image>().sprite = waitTex;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = startTex;
+        }
+        GetComponent<Button>().interactable = enable;
+    }
 }

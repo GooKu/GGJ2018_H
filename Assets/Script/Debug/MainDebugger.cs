@@ -10,14 +10,37 @@ public class MainDebugger : MonoBehaviour
     [SerializeField]
     private InputField TestLevelInput;
 
+    private void Start()
+    {
+        if(gM != null)
+        {
+            transform.SetParent(gM.transform);
+        }
+    }
+
+    public void SetGamePlayManager(GamePlayManager gM)
+    {
+        this.gM = gM;
+        transform.SetParent(gM.transform);
+    }
+
     public void OnLoadLevelClick()
     {
-        Debug.Log(TestLevelInput.text);
         gM.LoadLevel(int.Parse(TestLevelInput.text));
     }
 
     public void StartGame()
     {
         gM.StartGame();
+    }
+
+    public void OnGamePassClick()
+    {
+        gM.OnGamePass();
+    }
+
+    public void OnGameFailClick()
+    {
+        gM.OnGameFail();
     }
 }
